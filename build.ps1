@@ -5,7 +5,7 @@ param (
 )
 
 if (-not (Get-Module PSDepend -ListAvailable)) {
-    Install-Module PSDepend -Repository (Get-PSRepository)[0].Name -Scope CurrentUser
+    Install-Module PSDepend -Repository (Get-PSRepository)[0].Name -Scope CurrentUser -Force -Confirm:$false
 }
 Push-Location $PSScriptRoot -StackName BuildScript
 Invoke-PSDepend -Path $SourceFolder -Confirm:$false

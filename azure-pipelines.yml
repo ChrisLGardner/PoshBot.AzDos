@@ -1,0 +1,30 @@
+resources:
+- repo: self
+queue:
+  name: Hosted VS2017
+
+trigger:
+  - master
+
+steps:
+- task: gittools.gitversion.gitversion-task.GitVersion@4
+  displayName: GitVersion
+  inputs:
+    preferBundledVersion: false
+
+- task: richardfennellBM.BM-VSTS-Versioning-Task.Version-PowerShellModule-Task.VersionPowerShellModule@2
+  displayName: 'Version PowerShell Modules'
+  inputs:
+    VersionRegex: '\d+\.\d+\.\d+'
+    VersionNumber: $(GitVersion.MajorMinorPatch)
+    path: $(Build.SourcesDirectory)\src
+
+- powershell: '& .\build.ps1'
+  name: 'BuildModule'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: PoshBot.AzDos'
+  inputs:
+    PathtoPublish: $(Build.SourcesDirectory)\Output
+    ArtifactName: PoshBot.AzDos
+    publishLocation: 'Container'
