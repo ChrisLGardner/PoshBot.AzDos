@@ -2,6 +2,10 @@ function AddVSTeamGitRepository {
     [PoshBot.BotCommand(Aliases = ('AddTeamGitRepository'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Alias('Name', 'Project')]
     [string]
     ${ProjectName},

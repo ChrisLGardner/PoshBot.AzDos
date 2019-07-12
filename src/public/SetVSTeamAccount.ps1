@@ -2,6 +2,10 @@ function SetVSTeamAccount {
     [PoshBot.BotCommand(Aliases = ('SetTeamAccount'))]
     [CmdletBinding(DefaultParameterSetName='Secure', SupportsShouldProcess=$true, ConfirmImpact='Low')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='Plain', Mandatory=$true, Position=1)]
     [Parameter(ParameterSetName='Secure', Mandatory=$true, Position=1)]
     [Parameter(ParameterSetName='Windows', Mandatory=$true, Position=1)]

@@ -2,6 +2,10 @@ function UpdateVSTeamProfile {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamProfile'))]
     [CmdletBinding(DefaultParameterSetName='Secure', SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='Plain', Mandatory=$true, HelpMessage='Personal Access Token')]
     [string]
     ${PersonalAccessToken},

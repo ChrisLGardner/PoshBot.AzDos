@@ -1,7 +1,11 @@
 function GetVSTeamCloudSubscription {
     [PoshBot.BotCommand(Aliases = ('GetTeamCloudSubscription'))]
     [CmdletBinding()]
-param()
+param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    )
 
 begin
 {

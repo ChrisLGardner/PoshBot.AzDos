@@ -2,6 +2,10 @@ function GetVSTeamTfvcRootBranch {
     [PoshBot.BotCommand(Aliases = ('GetTeamTfvcRootBranch'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [switch]
     ${IncludeChildren},
 

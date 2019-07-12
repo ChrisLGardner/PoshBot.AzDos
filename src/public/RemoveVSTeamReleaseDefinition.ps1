@@ -2,6 +2,10 @@ function RemoveVSTeamReleaseDefinition {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamReleaseDefinition'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Alias('Name', 'Project')]
     [string]
     ${ProjectName},

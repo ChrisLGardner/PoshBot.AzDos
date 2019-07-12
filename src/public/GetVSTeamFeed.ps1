@@ -2,6 +2,10 @@ function GetVSTeamFeed {
     [PoshBot.BotCommand(Aliases = ('GetTeamFeed'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByID', Position=0)]
     [Alias('FeedId')]
     [string[]]

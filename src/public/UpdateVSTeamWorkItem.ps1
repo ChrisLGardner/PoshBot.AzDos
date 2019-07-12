@@ -2,6 +2,10 @@ function UpdateVSTeamWorkItem {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamWorkItem'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(Mandatory=$true, Position=0, ValueFromPipeline=$true)]
     [int]
     ${Id},

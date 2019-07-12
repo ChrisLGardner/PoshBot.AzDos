@@ -2,6 +2,10 @@ function RemoveVSTeamFeed {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamFeed'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByID', Mandatory=$true, Position=0, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('FeedId')]
     [string[]]

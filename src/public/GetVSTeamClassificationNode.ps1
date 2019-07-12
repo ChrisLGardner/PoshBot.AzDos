@@ -2,6 +2,10 @@ function GetVSTeamClassificationNode {
     [PoshBot.BotCommand(Aliases = ('GetTeamClassificationNode'))]
     [CmdletBinding(DefaultParameterSetName='ByIds')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Alias('Name', 'Project')]
     [string]
     ${ProjectName},

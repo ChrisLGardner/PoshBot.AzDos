@@ -1,7 +1,11 @@
 function ClearVSTeamDefaultProject {
     [PoshBot.BotCommand(Aliases = ('ClearTeamDefaultProject'))]
     [CmdletBinding()]
-param()
+param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    )
 
 begin
 {

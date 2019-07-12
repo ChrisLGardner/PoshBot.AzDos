@@ -1,7 +1,11 @@
 function GetVSTeamAPIVersion {
     [PoshBot.BotCommand(Aliases = ('GetTeamAPIVersion'))]
     [CmdletBinding()]
-param()
+param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    )
 
 begin
 {

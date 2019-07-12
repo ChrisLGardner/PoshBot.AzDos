@@ -2,6 +2,10 @@ function SetVSTeamAPIVersion {
     [PoshBot.BotCommand(Aliases = ('SetTeamAPIVersion'))]
     [CmdletBinding(DefaultParameterSetName='Target', SupportsShouldProcess=$true, ConfirmImpact='Low')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='Target', Position=0)]
     [ValidateSet('TFS2017','TFS2018','VSTS','AzD')]
     [string]

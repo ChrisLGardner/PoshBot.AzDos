@@ -2,6 +2,10 @@ function SetVSTeamApproval {
     [PoshBot.BotCommand(Aliases = ('SetTeamApproval'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Alias('Name', 'Project')]
     [string]
     ${ProjectName},

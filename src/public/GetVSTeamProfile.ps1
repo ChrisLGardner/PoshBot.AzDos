@@ -2,6 +2,10 @@ function GetVSTeamProfile {
     [PoshBot.BotCommand(Aliases = ('GetTeamProfile'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(Position=1, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${Name})

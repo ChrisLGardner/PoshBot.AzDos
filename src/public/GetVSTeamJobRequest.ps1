@@ -2,6 +2,10 @@ function GetVSTeamJobRequest {
     [PoshBot.BotCommand(Aliases = ('GetTeamJobRequest'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [int]
     ${PoolId},

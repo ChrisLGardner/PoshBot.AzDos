@@ -2,6 +2,10 @@ function GetVSTeamUser {
     [PoshBot.BotCommand(Aliases = ('GetTeamUser'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='List')]
     [ValidateSet('msa','aad','svc','imp','vss')]
     [string[]]

@@ -2,6 +2,10 @@ function GetVSTeamPool {
     [PoshBot.BotCommand(Aliases = ('GetTeamPool'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByID', Mandatory=$true, Position=1, ValueFromPipelineByPropertyName=$true)]
     [Alias('PoolID')]
     [int]

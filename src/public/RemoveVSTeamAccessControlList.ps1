@@ -2,6 +2,10 @@ function RemoveVSTeamAccessControlList {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamAccessControlList'))]
     [CmdletBinding(DefaultParameterSetName='ByNamespace', SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByNamespace', Mandatory=$true, ValueFromPipeline=$true)]
     [string]
     ${SecurityNamespace},
