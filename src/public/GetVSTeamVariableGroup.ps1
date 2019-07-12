@@ -2,6 +2,10 @@ function GetVSTeamVariableGroup {
     [PoshBot.BotCommand(Aliases = ('GetTeamVariableGroup'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='ByID', Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${Id})

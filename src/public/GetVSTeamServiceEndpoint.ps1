@@ -2,6 +2,10 @@ function GetVSTeamServiceEndpoint {
     [PoshBot.BotCommand(Aliases = ('GetTeamServiceEndpoint'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='ByID', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${id})

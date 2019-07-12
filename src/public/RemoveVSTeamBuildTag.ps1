@@ -2,6 +2,10 @@ function RemoveVSTeamBuildTag {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamBuildTag'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Low')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
     [string[]]
     ${Tags},

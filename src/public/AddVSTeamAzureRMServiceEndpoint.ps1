@@ -2,6 +2,10 @@ function AddVSTeamAzureRMServiceEndpoint {
     [PoshBot.BotCommand(Aliases = ('AddTeamAzureRMServiceEndpoint'))]
     [CmdletBinding(DefaultParameterSetName='Automatic')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('displayName')]
     [string]

@@ -2,6 +2,10 @@ function UpdateVSTeamVariableGroup {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamVariableGroup'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${Id},

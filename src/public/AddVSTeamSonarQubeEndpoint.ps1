@@ -2,6 +2,10 @@ function AddVSTeamSonarQubeEndpoint {
     [PoshBot.BotCommand(Aliases = ('AddTeamSonarQubeEndpoint'))]
     [CmdletBinding(DefaultParameterSetName='Secure')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${endpointName},

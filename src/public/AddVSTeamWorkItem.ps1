@@ -2,6 +2,10 @@ function AddVSTeamWorkItem {
     [PoshBot.BotCommand(Aliases = ('AddTeamWorkItem'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0)]
     [string]
     ${Title},

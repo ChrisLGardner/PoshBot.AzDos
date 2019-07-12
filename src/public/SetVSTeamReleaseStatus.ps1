@@ -2,6 +2,10 @@ function SetVSTeamReleaseStatus {
     [PoshBot.BotCommand(Aliases = ('SetTeamReleaseStatus'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [int[]]
     ${Id},

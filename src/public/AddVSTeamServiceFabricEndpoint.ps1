@@ -2,6 +2,10 @@ function AddVSTeamServiceFabricEndpoint {
     [PoshBot.BotCommand(Aliases = ('AddTeamServiceFabricEndpoint'))]
     [CmdletBinding(DefaultParameterSetName='Certificate')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('displayName')]
     [string]

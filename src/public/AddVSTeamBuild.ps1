@@ -2,6 +2,10 @@ function AddVSTeamBuild {
     [PoshBot.BotCommand(Aliases = ('AddTeamBuild'))]
     [CmdletBinding(DefaultParameterSetName='ByName')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='ByID', ValueFromPipelineByPropertyName=$true)]
     [int]
     ${BuildDefinitionId},

@@ -2,6 +2,10 @@ function InvokeVSTeamRequest {
     [PoshBot.BotCommand(Aliases = ('InvokeTeamRequest'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Position=0)]
     [string]
     ${resource},

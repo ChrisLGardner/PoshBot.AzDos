@@ -2,6 +2,10 @@ function GetVSTeamApproval {
     [PoshBot.BotCommand(Aliases = ('GetTeamApproval'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Position=0)]
     [ValidateSet('Approved','ReAssigned','Rejected','Canceled','Pending','Rejected','Skipped','Undefined')]
     [string]

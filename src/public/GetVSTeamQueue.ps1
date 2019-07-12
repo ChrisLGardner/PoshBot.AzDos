@@ -2,6 +2,10 @@ function GetVSTeamQueue {
     [PoshBot.BotCommand(Aliases = ('GetTeamQueue'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='List')]
     [string]
     ${queueName},

@@ -2,6 +2,10 @@ function AddVSTeamNuGetEndpoint {
     [PoshBot.BotCommand(Aliases = ('AddTeamNuGetEndpoint'))]
     [CmdletBinding(DefaultParameterSetName='SecureApiKey')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${EndpointName},

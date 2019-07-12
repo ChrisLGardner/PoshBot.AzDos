@@ -1,7 +1,11 @@
 function GetVSTeamWorkItemType {
     [PoshBot.BotCommand(Aliases = ('GetTeamWorkItemType'))]
     [CmdletBinding(DefaultParameterSetName='List')]
-param()
+param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+)
 
 begin
 {

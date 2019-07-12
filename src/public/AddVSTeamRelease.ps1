@@ -2,6 +2,10 @@ function AddVSTeamRelease {
     [PoshBot.BotCommand(Aliases = ('AddTeamRelease'))]
     [CmdletBinding(DefaultParameterSetName='ById', SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='ById', Mandatory=$true)]
     [int]
     ${DefinitionId},

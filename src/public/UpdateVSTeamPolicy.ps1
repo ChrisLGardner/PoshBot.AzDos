@@ -2,6 +2,10 @@ function UpdateVSTeamPolicy {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamPolicy'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0)]
     [int]
     ${id},

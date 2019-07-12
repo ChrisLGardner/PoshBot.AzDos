@@ -2,6 +2,10 @@ function GetVSTeamPolicyType {
     [PoshBot.BotCommand(Aliases = ('GetTeamPolicyType'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Position=0, ValueFromPipeline=$true)]
     [guid[]]
     ${Id})

@@ -2,6 +2,10 @@ function GetVSTeamGitRepository {
     [PoshBot.BotCommand(Aliases = ('GetTeamGitRepository'))]
     [CmdletBinding(DefaultParameterSetName='ByID')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='ByID', ValueFromPipeline=$true)]
     [Alias('RepositoryID')]
     [guid[]]

@@ -2,6 +2,10 @@ function SetVSTeamDefaultProject {
     [PoshBot.BotCommand(Aliases = ('SetTeamDefaultProject'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Low')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [switch]
     ${Force})
 

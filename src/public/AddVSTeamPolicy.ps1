@@ -2,6 +2,10 @@ function AddVSTeamPolicy {
     [PoshBot.BotCommand(Aliases = ('AddTeamPolicy'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0)]
     [guid]
     ${type},

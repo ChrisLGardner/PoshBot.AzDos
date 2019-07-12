@@ -2,6 +2,10 @@ function GetVSTeamPullRequest {
     [PoshBot.BotCommand(Aliases = ('GetTeamPullRequest'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Position=0)]
     [Alias('PullRequestId')]
     [string]

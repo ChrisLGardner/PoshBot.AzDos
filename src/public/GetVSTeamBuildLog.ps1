@@ -2,6 +2,10 @@ function GetVSTeamBuildLog {
     [PoshBot.BotCommand(Aliases = ('GetTeamBuildLog'))]
     [CmdletBinding(DefaultParameterSetName='ByID')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='ByID', Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('BuildID')]
     [int[]]

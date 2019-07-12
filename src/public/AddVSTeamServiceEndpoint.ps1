@@ -2,6 +2,10 @@ function AddVSTeamServiceEndpoint {
     [PoshBot.BotCommand(Aliases = ('AddTeamServiceEndpoint'))]
     [CmdletBinding(DefaultParameterSetName='Secure')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${endpointName},

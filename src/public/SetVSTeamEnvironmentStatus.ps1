@@ -2,6 +2,10 @@ function SetVSTeamEnvironmentStatus {
     [PoshBot.BotCommand(Aliases = ('SetTeamEnvironmentStatus'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('Id')]
     [int[]]

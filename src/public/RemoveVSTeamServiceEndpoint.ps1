@@ -2,6 +2,10 @@ function RemoveVSTeamServiceEndpoint {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamServiceEndpoint'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [string[]]
     ${id},

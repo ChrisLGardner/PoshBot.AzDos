@@ -2,6 +2,10 @@ function GetVSTeamMember {
     [PoshBot.BotCommand(Aliases = ('GetTeamMember'))]
     [CmdletBinding()]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Position=0)]
     [int]
     ${Top},

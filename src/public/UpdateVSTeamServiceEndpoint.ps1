@@ -2,6 +2,10 @@ function UpdateVSTeamServiceEndpoint {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamServiceEndpoint'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${id},
