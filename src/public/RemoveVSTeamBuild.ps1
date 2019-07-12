@@ -26,6 +26,7 @@ begin
         {
             $PSBoundParameters['OutBuffer'] = 1
         }
+        Set-VSTeamAccount -Profile $VSTeamProfile
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Remove-VSTeamBuild', [System.Management.Automation.CommandTypes]::Function)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters }
         $steppablePipeline = $scriptCmd.GetSteppablePipeline()

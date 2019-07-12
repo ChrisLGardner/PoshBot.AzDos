@@ -10,6 +10,7 @@ param(
 begin
 {
     try {
+        Set-VSTeamAccount -Profile $VSTeamProfile
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamInfo', [System.Management.Automation.CommandTypes]::Function)
         $PSBoundParameters.Add('$args', $args)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters }
