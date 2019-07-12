@@ -8,7 +8,7 @@ param(
     
     [Alias('Name', 'Project')]
     [string]
-    ${ProjectName},
+    ${ProjectName}
 )
 
 begin

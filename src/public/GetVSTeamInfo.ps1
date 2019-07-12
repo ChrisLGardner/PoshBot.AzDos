@@ -4,7 +4,7 @@ function GetVSTeamInfo {
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
     [parameter(Mandatory)]
-    [string]$VSTeamProfile,
+    [string]$VSTeamProfile
     )
 
 begin
