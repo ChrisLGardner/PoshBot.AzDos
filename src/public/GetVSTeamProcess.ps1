@@ -2,6 +2,10 @@ function GetVSTeamProcess {
     [PoshBot.BotCommand(Aliases = ('GetTeamProcess'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='List')]
     [int]
     ${Top},

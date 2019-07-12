@@ -2,6 +2,10 @@ function GetVSTeamServiceEndpointType {
     [PoshBot.BotCommand(Aliases = ('GetTeamServiceEndpointType'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByType')]
     [string]
     ${Type},

@@ -1,7 +1,11 @@
 function GetVSTeamInfo {
     [PoshBot.BotCommand(Aliases = ('GetTeamInfo'))]
     
-param()
+param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile
+    )
 
 begin
 {

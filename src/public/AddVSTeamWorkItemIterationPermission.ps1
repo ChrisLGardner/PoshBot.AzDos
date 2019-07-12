@@ -2,6 +2,10 @@ function AddVSTeamWorkItemIterationPermission {
     [PoshBot.BotCommand(Aliases = ('AddTeamWorkItemIterationPermission'))]
     [CmdletBinding(DefaultParameterSetName='ByProjectAndIterationIdAndUser')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByProjectAndIterationPathAndGroup', Mandatory=$true)]
     [Parameter(ParameterSetName='ByProjectAndIterationPathAndUser', Mandatory=$true)]
     [Parameter(ParameterSetName='ByProjectAndIterationPathAndDescriptor', Mandatory=$true)]

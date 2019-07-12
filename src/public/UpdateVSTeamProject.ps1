@@ -2,6 +2,10 @@ function UpdateVSTeamProject {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamProject'))]
     [CmdletBinding(DefaultParameterSetName='ByName', SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [string]
     ${NewName},
 

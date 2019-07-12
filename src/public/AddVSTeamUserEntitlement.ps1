@@ -2,6 +2,14 @@ function AddVSTeamUserEntitlement {
     [PoshBot.BotCommand(Aliases = ('AddTeamUserEntitlement'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0)]
     [Alias('UserEmail')]
     [string]

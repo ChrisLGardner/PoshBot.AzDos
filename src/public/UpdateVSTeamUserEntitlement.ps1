@@ -2,6 +2,10 @@ function UpdateVSTeamUserEntitlement {
     [PoshBot.BotCommand(Aliases = ('UpdateTeamUserEntitlement'))]
     [CmdletBinding(DefaultParameterSetName='ByEmail', SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ById', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('UserId')]
     [string]

@@ -1,7 +1,11 @@
 function GetVSTeamResourceArea {
     [PoshBot.BotCommand(Aliases = ('GetTeamResourceArea'))]
     [CmdletBinding()]
-param()
+param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile
+    )
 
 begin
 {

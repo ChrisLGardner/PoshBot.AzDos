@@ -2,6 +2,10 @@ function RemoveVSTeamProject {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamProject'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [switch]
     ${Force})
 

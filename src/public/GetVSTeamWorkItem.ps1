@@ -2,6 +2,10 @@ function GetVSTeamWorkItem {
     [PoshBot.BotCommand(Aliases = ('GetTeamWorkItem'))]
     [CmdletBinding(DefaultParameterSetName='ByID')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByID', Mandatory=$true, Position=0, ValueFromPipeline=$true)]
     [int]
     ${Id},

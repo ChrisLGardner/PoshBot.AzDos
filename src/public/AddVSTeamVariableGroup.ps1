@@ -2,6 +2,14 @@ function AddVSTeamVariableGroup {
     [PoshBot.BotCommand(Aliases = ('AddTeamVariableGroup'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [string]
     ${Name},

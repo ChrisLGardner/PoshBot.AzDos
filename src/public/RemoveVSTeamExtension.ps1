@@ -2,6 +2,10 @@ function RemoveVSTeamExtension {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamExtension'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(Mandatory=$true, Position=0)]
     [string]
     ${PublisherId},

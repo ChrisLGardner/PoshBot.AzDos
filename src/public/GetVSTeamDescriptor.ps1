@@ -2,6 +2,10 @@ function GetVSTeamDescriptor {
     [PoshBot.BotCommand(Aliases = ('GetTeamDescriptor'))]
     [CmdletBinding(DefaultParameterSetName='ByStorageKey')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByStorageKey', Mandatory=$true)]
     [string]
     ${StorageKey})

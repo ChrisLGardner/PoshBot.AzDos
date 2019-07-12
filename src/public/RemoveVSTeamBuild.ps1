@@ -2,6 +2,14 @@ function RemoveVSTeamBuild {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamBuild'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('BuildID')]
     [int[]]

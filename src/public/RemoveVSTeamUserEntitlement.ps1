@@ -2,6 +2,10 @@ function RemoveVSTeamUserEntitlement {
     [PoshBot.BotCommand(Aliases = ('RemoveTeamUserEntitlement'))]
     [CmdletBinding(DefaultParameterSetName='ById', SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ById', Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
     [Alias('UserId')]
     [string]

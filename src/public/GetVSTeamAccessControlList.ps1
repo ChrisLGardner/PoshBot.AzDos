@@ -2,6 +2,10 @@ function GetVSTeamAccessControlList {
     [PoshBot.BotCommand(Aliases = ('GetTeamAccessControlList'))]
     [CmdletBinding(DefaultParameterSetName='ByNamespace')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByNamespace', Mandatory=$true, ValueFromPipeline=$true)]
     [string]
     ${SecurityNamespace},

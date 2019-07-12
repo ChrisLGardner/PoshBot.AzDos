@@ -2,6 +2,10 @@ function GetVSTeamExtension {
     [PoshBot.BotCommand(Aliases = ('GetTeamExtension'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='List')]
     [switch]
     ${IncludeInstallationIssues},

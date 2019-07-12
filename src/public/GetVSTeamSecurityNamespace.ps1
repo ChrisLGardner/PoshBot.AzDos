@@ -2,6 +2,10 @@ function GetVSTeamSecurityNamespace {
     [PoshBot.BotCommand(Aliases = ('GetTeamSecurityNamespace'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(ParameterSetName='ByNamespaceName', Mandatory=$true)]
     [string]
     ${Name},

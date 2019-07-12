@@ -2,6 +2,14 @@ function GetVSTeamGitRef {
     [PoshBot.BotCommand(Aliases = ('GetTeamGitRef'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipelineByPropertyName=$true)]
     [Alias('Id')]
     [guid]

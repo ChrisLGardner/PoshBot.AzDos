@@ -2,6 +2,14 @@ function GetVSTeamProject {
     [PoshBot.BotCommand(Aliases = ('GetTeamProject'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='List')]
     [ValidateSet('WellFormed','CreatePending','Deleting','New','All')]
     [string]

@@ -2,6 +2,14 @@ function GetVSTeamBuild {
     [PoshBot.BotCommand(Aliases = ('GetTeamBuild'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(ParameterSetName='List')]
     [int]
     ${Top},

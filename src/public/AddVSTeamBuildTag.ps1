@@ -2,6 +2,14 @@ function AddVSTeamBuildTag {
     [PoshBot.BotCommand(Aliases = ('AddTeamBuildTag'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Low')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [Parameter(Mandatory=$true, Position=0, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
     [string[]]
     ${Tags},

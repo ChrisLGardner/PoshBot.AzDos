@@ -2,6 +2,14 @@ function GetVSTeamRelease {
     [PoshBot.BotCommand(Aliases = ('GetTeamRelease'))]
     [CmdletBinding(DefaultParameterSetName='List')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
+    [Alias('Name', 'Project')]
+    [string]
+    ${ProjectName},
+
     [ValidateSet('environments','artifacts','approvals','none')]
     [string]
     ${expand},

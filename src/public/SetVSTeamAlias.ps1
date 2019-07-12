@@ -2,6 +2,10 @@ function SetVSTeamAlias {
     [PoshBot.BotCommand(Aliases = ('SetTeamAlias'))]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Low')]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [switch]
     ${Force})
 

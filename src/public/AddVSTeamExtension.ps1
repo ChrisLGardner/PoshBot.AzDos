@@ -2,6 +2,10 @@ function AddVSTeamExtension {
     [PoshBot.BotCommand(Aliases = ('AddTeamExtension'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(Mandatory=$true, Position=0)]
     [string]
     ${PublisherId},

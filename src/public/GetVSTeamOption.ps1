@@ -2,6 +2,10 @@ function GetVSTeamOption {
     [PoshBot.BotCommand(Aliases = ('GetTeamOption'))]
     [CmdletBinding()]
 param(
+    [PoshBot.FromConfig('VSTeamProfile')]
+    [parameter(Mandatory)]
+    [string]$VSTeamProfile,
+    
     [Parameter(Position=0)]
     [string]
     ${subDomain})
