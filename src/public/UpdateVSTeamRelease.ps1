@@ -1,5 +1,6 @@
 function UpdateVSTeamRelease {
-    [PoshBot.BotCommand(Aliases = ('UpdateTeamRelease'))]
+    [PoshBot.BotCommand(Aliases = ('UpdateTeamRelease'),
+                        Permissions = 'ManageRelease')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

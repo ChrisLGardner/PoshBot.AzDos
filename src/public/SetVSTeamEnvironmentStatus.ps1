@@ -1,5 +1,6 @@
 function SetVSTeamEnvironmentStatus {
-    [PoshBot.BotCommand(Aliases = ('SetTeamEnvironmentStatus'))]
+    [PoshBot.BotCommand(Aliases = ('SetTeamEnvironmentStatus'),
+                        Permissions = 'ManageRelease')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

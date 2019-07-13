@@ -1,5 +1,6 @@
 function RemoveVSTeamReleaseDefinition {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamReleaseDefinition'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamReleaseDefinition'),
+                        Permissions = 'ManageRelease')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
