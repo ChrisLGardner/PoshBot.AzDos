@@ -1,5 +1,6 @@
 function AddVSTeamAccessControlEntry {
-    [PoshBot.BotCommand(Aliases = ('AddTeamAccessControlEntry'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamAccessControlEntry'),
+                        Permissions = 'ManageTeam')]
     [CmdletBinding(DefaultParameterSetName='ByNamespace')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
