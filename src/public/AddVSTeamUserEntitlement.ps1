@@ -1,5 +1,6 @@
 function AddVSTeamUserEntitlement {
-    [PoshBot.BotCommand(Aliases = ('AddTeamUserEntitlement'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamUserEntitlement'),
+                        Permissions = 'ManageUsers')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
