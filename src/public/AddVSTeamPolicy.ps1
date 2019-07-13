@@ -1,6 +1,6 @@
 function AddVSTeamPolicy {
     [PoshBot.BotCommand(Aliases = ('AddTeamPolicy'),
-                        Permissions = 'ManageTeam')]
+                        Permissions = 'ManageCodePolicy')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

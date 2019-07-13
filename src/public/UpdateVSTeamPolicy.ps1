@@ -1,5 +1,6 @@
 function UpdateVSTeamPolicy {
-    [PoshBot.BotCommand(Aliases = ('UpdateTeamPolicy'))]
+    [PoshBot.BotCommand(Aliases = ('UpdateTeamPolicy'),
+                        Permissions = 'ManageCodePolicy')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
