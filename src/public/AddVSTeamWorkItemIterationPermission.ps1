@@ -1,5 +1,6 @@
 function AddVSTeamWorkItemIterationPermission {
-    [PoshBot.BotCommand(Aliases = ('AddTeamWorkItemIterationPermission'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamWorkItemIterationPermission'),
+                        Permissions = 'ManageWorkItem')]
     [CmdletBinding(DefaultParameterSetName='ByProjectAndIterationIdAndUser')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

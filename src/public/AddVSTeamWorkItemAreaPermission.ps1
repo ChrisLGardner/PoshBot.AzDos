@@ -1,5 +1,6 @@
 function AddVSTeamWorkItemAreaPermission {
-    [PoshBot.BotCommand(Aliases = ('AddTeamWorkItemAreaPermission'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamWorkItemAreaPermission'),
+                        Permissions = 'ManageWorkItem')]
     [CmdletBinding(DefaultParameterSetName='ByProjectAndAreaIdAndUser')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
