@@ -1,5 +1,6 @@
 function AddVSTeamGitRepositoryPermission {
-    [PoshBot.BotCommand(Aliases = ('AddTeamGitRepositoryPermission'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamGitRepositoryPermission'),
+                        Permissions = 'ManageCode')]
     [CmdletBinding(DefaultParameterSetName='ByProjectAndUser')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
