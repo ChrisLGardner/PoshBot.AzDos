@@ -1,5 +1,6 @@
 function DisableVSTeamAgent {
-    [PoshBot.BotCommand(Aliases = ('DisableTeamAgent'))]
+    [PoshBot.BotCommand(Aliases = ('DisableTeamAgent'),
+                        Permissions = 'ManageAgent')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

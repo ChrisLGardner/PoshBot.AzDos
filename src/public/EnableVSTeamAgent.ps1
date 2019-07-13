@@ -1,5 +1,6 @@
 function EnableVSTeamAgent {
-    [PoshBot.BotCommand(Aliases = ('EnableTeamAgent'))]
+    [PoshBot.BotCommand(Aliases = ('EnableTeamAgent'),
+                        Permissions = 'ManageAgent')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
