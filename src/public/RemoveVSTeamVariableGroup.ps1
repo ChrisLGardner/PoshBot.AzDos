@@ -1,5 +1,6 @@
 function RemoveVSTeamVariableGroup {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamVariableGroup'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamVariableGroup'),
+                        Permissions = 'ManageVariableGroup')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

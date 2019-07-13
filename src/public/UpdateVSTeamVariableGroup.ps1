@@ -1,5 +1,6 @@
 function UpdateVSTeamVariableGroup {
-    [PoshBot.BotCommand(Aliases = ('UpdateTeamVariableGroup'))]
+    [PoshBot.BotCommand(Aliases = ('UpdateTeamVariableGroup'),
+                        Permissions = 'ManageVariableGroup')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
