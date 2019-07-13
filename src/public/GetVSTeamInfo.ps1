@@ -7,37 +7,14 @@ param(
     [string]$VSTeamProfile
     )
 
-begin
-{
-    try {
+    process {
         Set-VSTeamAccount -Profile $VSTeamProfile
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamInfo', [System.Management.Automation.CommandTypes]::Function)
         $PSBoundParameters.Add('$args', $args)
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters }
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline()
-        $steppablePipeline.Begin($myInvocation.ExpectingInput, $ExecutionContext)
-    } catch {
-        throw
-    }
-}
+        $output = & $wrappedCmd @PSBoundParameters 
 
-process
-{
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        throw
+        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
     }
-}
-
-end
-{
-    try {
-        $steppablePipeline.End()
-    } catch {
-        throw
-    }
-}
 <#
 
 .ForwardHelpTargetName Get-VSTeamInfo
@@ -46,3 +23,5 @@ end
 #>
 
 }  
+
+
