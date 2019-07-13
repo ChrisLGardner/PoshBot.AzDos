@@ -1,5 +1,6 @@
 function AddVSTeamVariableGroup {
-    [PoshBot.BotCommand(Aliases = ('AddTeamVariableGroup'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamVariableGroup'),
+                        Permissions = 'ManageVariableGroup')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
