@@ -1,5 +1,6 @@
 function AddVSTeamFeed {
-    [PoshBot.BotCommand(Aliases = ('AddTeamFeed'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamFeed'),
+                        Permissions = 'ManageArtifacts')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

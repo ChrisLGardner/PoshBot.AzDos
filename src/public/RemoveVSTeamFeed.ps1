@@ -1,5 +1,6 @@
 function RemoveVSTeamFeed {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamFeed'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamFeed'),
+                        Permissions = 'ManageArtifacts')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
