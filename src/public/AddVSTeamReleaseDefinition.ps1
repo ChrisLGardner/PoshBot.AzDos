@@ -1,5 +1,6 @@
 function AddVSTeamReleaseDefinition {
-    [PoshBot.BotCommand(Aliases = ('AddTeamReleaseDefinition'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamReleaseDefinition'),
+                        Permissions = 'ManageRelease')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
