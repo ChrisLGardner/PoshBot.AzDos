@@ -1,5 +1,6 @@
 function GetVSTeamAccessControlList {
-    [PoshBot.BotCommand(Aliases = ('GetTeamAccessControlList'))]
+    [PoshBot.BotCommand(Aliases = ('GetTeamAccessControlList'),
+                        Permissions = 'ManageTeam')]
     [CmdletBinding(DefaultParameterSetName='ByNamespace')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

@@ -1,5 +1,6 @@
 function RemoveVSTeamAccessControlList {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamAccessControlList'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamAccessControlList'),
+                        Permissions = 'ManageTeam')]
     [CmdletBinding(DefaultParameterSetName='ByNamespace', SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
