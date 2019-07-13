@@ -1,5 +1,6 @@
 function AddVSTeamProjectPermission {
-    [PoshBot.BotCommand(Aliases = ('AddTeamProjectPermission'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamProjectPermission'),
+                        Permissions = 'ManageProject')]
     [CmdletBinding(DefaultParameterSetName='ByProjectAndUser')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
