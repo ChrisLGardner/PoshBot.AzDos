@@ -1,5 +1,6 @@
 function RemoveVSTeamGitRepository {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamGitRepository'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamGitRepository'),
+                        Permissions = 'ManageCode')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
