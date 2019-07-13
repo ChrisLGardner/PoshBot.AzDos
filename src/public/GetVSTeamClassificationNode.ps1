@@ -28,41 +28,13 @@ param(
     [int]
     ${Depth})
 
-begin
-{
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer))
-        {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
+    process {
         Set-VSTeamAccount -Profile $VSTeamProfile
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamClassificationNode', [System.Management.Automation.CommandTypes]::Function)
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters }
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline()
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        throw
-    }
-}
+        $output = & $wrappedCmd @PSBoundParameters 
 
-process
-{
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        throw
+        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
     }
-}
-
-end
-{
-    try {
-        $steppablePipeline.End()
-    } catch {
-        throw
-    }
-}
 <#
 
 .ForwardHelpTargetName Get-VSTeamClassificationNode
@@ -71,3 +43,5 @@ end
 #>
 
 }  
+
+
