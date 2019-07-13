@@ -1,5 +1,6 @@
 function UpdateVSTeamExtension {
-    [PoshBot.BotCommand(Aliases = ('UpdateTeamExtension'))]
+    [PoshBot.BotCommand(Aliases = ('UpdateTeamExtension'),
+                        Permissions = 'ManageExtension')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
