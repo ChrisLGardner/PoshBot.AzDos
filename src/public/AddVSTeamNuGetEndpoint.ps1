@@ -1,5 +1,6 @@
 function AddVSTeamNuGetEndpoint {
-    [PoshBot.BotCommand(Aliases = ('AddTeamNuGetEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamNuGetEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(DefaultParameterSetName='SecureApiKey')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

@@ -1,5 +1,6 @@
 function RemoveVSTeamServiceEndpoint {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamServiceEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamServiceEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

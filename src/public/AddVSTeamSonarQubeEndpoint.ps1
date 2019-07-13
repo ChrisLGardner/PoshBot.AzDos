@@ -1,5 +1,6 @@
 function AddVSTeamSonarQubeEndpoint {
-    [PoshBot.BotCommand(Aliases = ('AddTeamSonarQubeEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamSonarQubeEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(DefaultParameterSetName='Secure')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
