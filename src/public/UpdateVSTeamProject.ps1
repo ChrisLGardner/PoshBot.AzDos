@@ -1,5 +1,6 @@
 function UpdateVSTeamProject {
-    [PoshBot.BotCommand(Aliases = ('UpdateTeamProject'))]
+    [PoshBot.BotCommand(Aliases = ('UpdateTeamProject'),
+                        Permissions = 'ManageProject')]
     [CmdletBinding(DefaultParameterSetName='ByName', SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
