@@ -1,5 +1,6 @@
 function AddVSTeamBuild {
-    [PoshBot.BotCommand(Aliases = ('AddTeamBuild'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamBuild'),
+                        Permissions = 'ManageBuild')]
     [CmdletBinding(DefaultParameterSetName='ByName')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

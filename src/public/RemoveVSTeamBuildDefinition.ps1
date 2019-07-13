@@ -1,5 +1,6 @@
 function RemoveVSTeamBuildDefinition {
-    [PoshBot.BotCommand(Aliases = ('RemoveTeamBuildDefinition'))]
+    [PoshBot.BotCommand(Aliases = ('RemoveTeamBuildDefinition'),
+                        Permissions = 'ManageBuild')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
