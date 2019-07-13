@@ -1,5 +1,6 @@
 function AddVSTeamAzureRMServiceEndpoint {
-    [PoshBot.BotCommand(Aliases = ('AddTeamAzureRMServiceEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamAzureRMServiceEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(DefaultParameterSetName='Automatic')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

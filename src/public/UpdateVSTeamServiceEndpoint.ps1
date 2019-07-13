@@ -1,5 +1,6 @@
 function UpdateVSTeamServiceEndpoint {
-    [PoshBot.BotCommand(Aliases = ('UpdateTeamServiceEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('UpdateTeamServiceEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='Medium')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

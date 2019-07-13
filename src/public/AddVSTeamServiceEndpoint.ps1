@@ -1,5 +1,6 @@
 function AddVSTeamServiceEndpoint {
-    [PoshBot.BotCommand(Aliases = ('AddTeamServiceEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamServiceEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(DefaultParameterSetName='Secure')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

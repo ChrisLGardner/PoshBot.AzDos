@@ -1,5 +1,6 @@
 function AddVSTeamKubernetesEndpoint {
-    [PoshBot.BotCommand(Aliases = ('AddTeamKubernetesEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamKubernetesEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding()]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]

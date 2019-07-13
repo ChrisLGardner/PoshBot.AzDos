@@ -1,5 +1,6 @@
 function AddVSTeamServiceFabricEndpoint {
-    [PoshBot.BotCommand(Aliases = ('AddTeamServiceFabricEndpoint'))]
+    [PoshBot.BotCommand(Aliases = ('AddTeamServiceFabricEndpoint'),
+                        Permissions = 'ManageEndpoint')]
     [CmdletBinding(DefaultParameterSetName='Certificate')]
 param(
     [PoshBot.FromConfig('VSTeamProfile')]
