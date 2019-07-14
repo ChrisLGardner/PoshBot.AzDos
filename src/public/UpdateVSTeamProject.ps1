@@ -6,6 +6,10 @@ param(
     [PoshBot.FromConfig('VSTeamProfile')]
     [parameter(Mandatory)]
     [string]$VSTeamProfile,
+
+    [Alias('Project')]
+    [string]
+    ${ProjectName},
     
     [string]
     ${NewName},
@@ -24,7 +28,7 @@ param(
         Set-VSTeamAccount -Profile $VSTeamProfile
         $PSBoundParameters.Remove('VSTeamProfile')
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Update-VSTeamProject', [System.Management.Automation.CommandTypes]::Function)
-        $output = & $wrappedCmd @PSBoundParameters 
+        $output = & $wrappedCmd @PSBoundParameters | Select-Object -Property Name,Description
 
         New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
     }

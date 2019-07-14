@@ -6,6 +6,10 @@ param(
     [PoshBot.FromConfig('VSTeamProfile')]
     [parameter(Mandatory)]
     [string]$VSTeamProfile,
+
+    [Alias('Project')]
+    [string]
+    ${ProjectName},
     
     [switch]
     ${Force})
