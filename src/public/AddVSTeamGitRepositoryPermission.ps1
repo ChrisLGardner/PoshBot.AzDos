@@ -96,7 +96,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Add-VSTeamGitRepositoryPermission', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Git Reporitory Permissions' -Text ($output | Format-List * | Out-String)
     }
 <#
 

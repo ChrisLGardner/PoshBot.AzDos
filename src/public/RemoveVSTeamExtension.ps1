@@ -24,7 +24,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Remove-VSTeamExtension', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Extensions' -Text ($output | Format-List * | Out-String)
     }
 <#
 

@@ -25,7 +25,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Add-VSTeamProject', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters | Select-Object -Property Name,Description
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Projects' -Text ($output | Format-List * | Out-String)
     }
 <#
 

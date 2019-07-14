@@ -36,7 +36,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Set-VSTeamApproval', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Approvals' -Text ($output | Format-List * | Out-String)
     }
 <#
 

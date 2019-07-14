@@ -22,7 +22,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Disable-VSTeamAgent', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Agents' -Text ($output | Format-List * | Out-String)
     }
 <#
 

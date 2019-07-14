@@ -21,7 +21,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamGitRef', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Git Refs' -Text ($output | Format-List * | Out-String)
     }
 <#
 

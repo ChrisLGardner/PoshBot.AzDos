@@ -28,7 +28,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Update-VSTeamRelease', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Releases' -Text ($output | Format-List * | Out-String)
     }
 <#
 

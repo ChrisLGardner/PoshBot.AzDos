@@ -31,7 +31,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Update-VSTeamUserEntitlement', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'User Entitlements' -Text ($output | Format-List * | Out-String)
     }
 <#
 

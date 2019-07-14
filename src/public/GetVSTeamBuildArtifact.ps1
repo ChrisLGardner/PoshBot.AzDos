@@ -21,7 +21,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamBuildArtifact', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Build Artifacts' -Text ($output | Format-List * | Out-String)
     }
 <#
 

@@ -34,7 +34,7 @@ param(
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamClassificationNode', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
-        New-PoshBotCardResponse -Type Normal -Title Projects -Text ($output | Format-List * | Out-String)
+        New-PoshBotCardResponse -Type Normal -Title 'Team Classification Nodes' -Text ($output | Format-List * | Out-String)
     }
 <#
 
