@@ -47,6 +47,7 @@ param(
 
     process {
         Set-VSTeamAccount -Profile $VSTeamProfile
+        $PSBoundParameters.Remove('VSTeamProfile')
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Add-VSTeamAccessControlEntry', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
@@ -60,5 +61,6 @@ param(
 #>
 
 }  
+
 
 

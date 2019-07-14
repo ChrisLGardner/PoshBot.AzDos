@@ -13,6 +13,7 @@ param(
 
     process {
         Set-VSTeamAccount -Profile $VSTeamProfile
+        $PSBoundParameters.Remove('VSTeamProfile')
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamFeed', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
@@ -26,5 +27,6 @@ param(
 #>
 
 }  
+
 
 

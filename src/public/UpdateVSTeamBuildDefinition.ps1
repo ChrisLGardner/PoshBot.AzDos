@@ -7,7 +7,7 @@ param(
     [parameter(Mandatory)]
     [string]$VSTeamProfile,
     
-    [Alias('Name', 'Project')]
+    [Alias('Project')]
     [string]
     ${ProjectName},
 
@@ -24,6 +24,7 @@ param(
 
     process {
         Set-VSTeamAccount -Profile $VSTeamProfile
+        $PSBoundParameters.Remove('VSTeamProfile')
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Update-VSTeamBuildDefinition', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
@@ -37,5 +38,6 @@ param(
 #>
 
 }  
+
 
 

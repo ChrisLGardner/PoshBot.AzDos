@@ -6,13 +6,14 @@ param(
     [parameter(Mandatory)]
     [string]$VSTeamProfile,
     
-    [Alias('Name', 'Project')]
+    [Alias('Project')]
     [string]
     ${ProjectName}
 )
 
     process {
         Set-VSTeamAccount -Profile $VSTeamProfile
+        $PSBoundParameters.Remove('VSTeamProfile')
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand('Get-VSTeamWorkItemType', [System.Management.Automation.CommandTypes]::Function)
         $output = & $wrappedCmd @PSBoundParameters 
 
@@ -26,5 +27,6 @@ param(
 #>
 
 }  
+
 
 
