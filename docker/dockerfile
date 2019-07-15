@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/windows/servercore:1903
+
+COPY ["PoshBot.Setup.ps1", "/"]
+
+CMD ["PowerShell.exe", "-File", "/PoshBot.Setup.ps1"]
+
+COPY "vsteam_profiles.json" "/vsteam_profiles.json"
+
+RUN ["PowerShell.exe", "-Command", "Copy-Item -Path /vsteam_profiles.json -Destination ~/"]
+
+COPY PoshBotConfig.ps1 /PoshBotConfig.ps1
+
+COPY ["Modules", "C:/Program Files/WindowsPowerShell/Modules"]
+
+CMD ["PowerShell.exe", "-File", "/PoshBotConfig.ps1"]
